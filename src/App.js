@@ -7,13 +7,30 @@ import RecipeData from "./RecipeData"
 function App() {
   const [recipes, setRecipes] = useState(RecipeData);
 
+  const initialFormData = {
+    name: "",
+    cuisine: "",
+    photo: "",
+    ingredients: "",
+    preparation: "",
+  }
+
+  const [formData, setFormData] = useState({...initialFormData})
+
   const submitManager = (event) => {
-    event.preventDefault()
+    event.preventDefault();
+    setFormData({...initialFormData});
+    console.log(formData)
+
+      
     console.log("submitted")
   }
   
-  const handleCreate = () => {
-    console.log("clicked!")
+  const handleFormChange = ({target}) => {
+    setFormData({
+      ...formData,
+      [target.name]: target.value,
+    })
   }
 
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
@@ -24,7 +41,7 @@ function App() {
     <div className="App">
       <header><h1>Delicious Food Recipes</h1></header>
       <RecipeList />
-      <RecipeCreate submitManager={submitManager}/>
+      <RecipeCreate submitManager={submitManager} handleFormChange={handleFormChange}/>
     </div>
   );
 }
