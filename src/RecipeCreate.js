@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RecipeCreate({submitManager}) {
+function RecipeCreate({submitManager, handleFormChange}) {
 
   //hello
 
@@ -20,6 +20,7 @@ function RecipeCreate({submitManager}) {
               id="name"
               placeholder="Name"
               type="text"
+              onChange={handleFormChange}
               />
             </label>
           </td>
@@ -30,6 +31,7 @@ function RecipeCreate({submitManager}) {
               id="cuisine"
               placeholder="Cuisine"
               type="text"
+              onChange={handleFormChange}
               />
             </label>
           </td>
@@ -40,6 +42,7 @@ function RecipeCreate({submitManager}) {
               id="photo"
               placeholder="URL"
               type="url"
+              onChange={handleFormChange}
               />
             </label>
           </td>
@@ -51,6 +54,7 @@ function RecipeCreate({submitManager}) {
               placeholder="Ingredients"
               type="text"
               rows="2"
+              onChange={handleFormChange}
               />
             </label>
           </td>
@@ -62,6 +66,7 @@ function RecipeCreate({submitManager}) {
               placeholder="Preparation"
               type="text"
               rows="2"
+              onChange={handleFormChange}
               />
             </label>
           </td>
