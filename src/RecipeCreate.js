@@ -1,6 +1,30 @@
 import React, { useState } from "react";
 
-function RecipeCreate({submitManager, handleFormChange}) {
+function RecipeCreate({recipes, setRecipes}) {
+
+  const initialFormData = {
+    name: "",
+    cuisine: "",
+    photo: "",
+    ingredients: "",
+    preparation: "",
+  }
+
+  const [formData, setFormData] = useState({...initialFormData})
+
+  const submitManager = (event) => {
+    event.preventDefault();
+    setRecipes(recipes => [...recipes, formData])
+    setFormData({...initialFormData});
+    console.log(recipes)
+  }
+  
+  const handleFormChange = ({target}) => {
+    setFormData({
+      ...formData,
+      [target.name]: target.value,
+    })
+  }
 
   //hello
 
@@ -9,7 +33,7 @@ function RecipeCreate({submitManager, handleFormChange}) {
   // TODO: Add the required submit and change handlers
   
   return (
-    <form name="create">
+    <form name="create" onSubmit={submitManager}>
       <table>
         <tbody>
           <tr>
@@ -21,6 +45,7 @@ function RecipeCreate({submitManager, handleFormChange}) {
               placeholder="Name"
               type="text"
               onChange={handleFormChange}
+              value={formData.name}
               />
             </label>
           </td>
@@ -32,6 +57,7 @@ function RecipeCreate({submitManager, handleFormChange}) {
               placeholder="Cuisine"
               type="text"
               onChange={handleFormChange}
+              value={formData.cuisine}
               />
             </label>
           </td>
@@ -41,8 +67,9 @@ function RecipeCreate({submitManager, handleFormChange}) {
               name="photo"
               id="photo"
               placeholder="URL"
-              type="url"
+              type="text"
               onChange={handleFormChange}
+              value={formData.photo}
               />
             </label>
           </td>
@@ -55,6 +82,7 @@ function RecipeCreate({submitManager, handleFormChange}) {
               type="text"
               rows="2"
               onChange={handleFormChange}
+              value={formData.ingredients}
               />
             </label>
           </td>
@@ -67,11 +95,12 @@ function RecipeCreate({submitManager, handleFormChange}) {
               type="text"
               rows="2"
               onChange={handleFormChange}
+              value={formData.preparation}
               />
             </label>
           </td>
             <td>
-              <button type="submit" onClick={submitManager}>Create</button>
+              <button type="submit">Create</button>
             </td>
           </tr>
         </tbody>
