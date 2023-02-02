@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RecipeCreate() {
+function RecipeCreate({submitManager}) {
 
   //hello
 
@@ -45,26 +45,28 @@ function RecipeCreate() {
           </td>
           <td>
             <label name="ingredients">
-              <input
+              <textarea
               name="ingredients"
               id="ingredients"
               placeholder="Ingredients"
               type="text"
+              rows="2"
               />
             </label>
           </td>
           <td>
             <label name="preparation">
-              <input
+              <textarea
               name="preparation"
               id="preparation"
               placeholder="Preparation"
               type="text"
+              rows="2"
               />
             </label>
           </td>
             <td>
-              <button type="submit">Create</button>
+              <button type="submit" onClick={submitManager}>Create</button>
             </td>
           </tr>
         </tbody>
