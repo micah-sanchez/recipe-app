@@ -32,6 +32,11 @@ function App() {
     setRecipes(prev => [...recipes]);
   }
 
+//Alternate way to create delete handler
+  // const deleteRecipe = (deleteByIndex) =>
+  //   setRecipes((currentRecipe) =>
+  //   currentRecipe.filter((recipe, index) => index !== deleteByIndex))
+
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
 
