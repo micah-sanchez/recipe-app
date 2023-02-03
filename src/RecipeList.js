@@ -1,24 +1,8 @@
 import React from "react";
 
-function RecipeList({recipes}) {
+function RecipeList({recipeListComponents}) {
 
-  const recipeListComponents = recipes.map((recipe, index) => {
-    return (
-    <tr key ={index}>
-      <td>{recipe.name}</td>
-      <td>{recipe.cuisine}</td>
-      <td>
-        <img src={recipe.photo} style={{objectFit: 'scale-down', width: '100%', height: '100%'}}/>
-      </td>
-      <td>{recipe.ingredients}</td>
-      <td>{recipe.preparation}</td>
-      <td>
-        <button name="delete">Delete</button>
-      </td>
-      
-    </tr>
-    )
-  })
+
   
   // TODO: Display the list of recipes using the structure of table that is provided.
   // TODO: Create at least one additional component that is used by this component.
