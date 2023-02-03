@@ -60,7 +60,44 @@ table {
   text-overflow: ellipsis;
 }
 
+img {
+  object-fit: scale-down;
+  width: 100%;
+  height: 100%
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff0c7;
+}
+
 /* Column Size for thead */
 
+table thead th:nth-child(-n + 3) {
+  width: 10%;
+}
+
+table thead th:nth-child(n + 4):nth-child(-n+5) {
+  width: 30%;
+}
+
+table thead th:nth-child(n+6) {
+  width: 10%;
+}
 
 /* Column size for tbody */
+
+form table td:nth-child(-n + 3) {
+  width: 10%
+}
+
+form table td input:nth-child(-n + 3) {
+  width: 100px;
+}
+
+form table td:nth-child(n + 4):nth-child(-n+5) {
+  width: 30%;
+}
+
+form table td:nth-child(n+6) {
+  width: 10%;
+}
