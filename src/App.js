@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import RecipeCreate from "./RecipeCreate";
 import RecipeList from "./RecipeList";
-import RecipeData from "./RecipeData"
+import RecipeData from "./RecipeData";
 
 function App() {
   const [recipes, setRecipes] = useState(RecipeData);
@@ -23,7 +23,7 @@ function App() {
       
     </tr>
     )
-  })
+  });
 
   const deleteHandler = (arrayIndex) => {
     console.log("clicked", arrayIndex)
@@ -32,6 +32,8 @@ function App() {
     setRecipes(prev => [...recipes]);
   }
 
+
+
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
 
@@ -39,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <header><h1>Delicious Food Recipes</h1></header>
-      <RecipeList recipeListComponents={recipeListComponents}/>
+      <RecipeList recipes={recipes} recipeListComponents={recipeListComponents}/>
       <RecipeCreate recipes={recipes} setRecipes={setRecipes}/>
     </div>
   );
