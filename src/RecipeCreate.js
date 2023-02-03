@@ -75,7 +75,7 @@ function RecipeCreate({recipes, setRecipes}) {
           </td>
           <td>
             <label name="ingredients">
-              <textarea
+              <textarea 
               name="ingredients"
               id="ingredients"
               placeholder="Ingredients"
@@ -88,7 +88,7 @@ function RecipeCreate({recipes, setRecipes}) {
           </td>
           <td>
             <label name="preparation">
-              <textarea
+              <textarea 
               name="preparation"
               id="preparation"
               placeholder="Preparation"
