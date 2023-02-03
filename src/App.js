@@ -10,13 +10,13 @@ function App() {
   const recipeListComponents = recipes.map((recipe, index) => {
     return (
     <tr key ={index}>
-      <td>{recipe.name}</td>
+      <td >{recipe.name}</td>
       <td>{recipe.cuisine}</td>
       <td>
-        <img src={recipe.photo} style={{objectFit: 'scale-down', width: '100%', height: '100%'}}/>
+        <img src={recipe.photo}/>
       </td>
-      <td>{recipe.ingredients}</td>
-      <td>{recipe.preparation}</td>
+      <td className="content_td p"><p>{(recipe.ingredients)}</p></td>
+      <td className="content_td p"><p>{(recipe.preparation)}</p></td>
       <td>
         <button name="delete" onClick={() => {deleteHandler(index)}}>Delete</button>
       </td>
@@ -31,8 +31,6 @@ function App() {
     //console.log(recipes)
     setRecipes(prev => [...recipes]);
   }
-
-
 
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
